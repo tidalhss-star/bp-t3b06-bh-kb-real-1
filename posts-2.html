@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b06-bh-kb-real-1</title>
+  <meta name="description" content="t3b06-bh-kb-real-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://banghwa-room-guide.mapo-room-guide.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ :root {
+ --bg: #f5f0e8;
+ --text: #1a1a1a;
+ --accent: #c62828;
+ --accent2: #1b5e20;
+ --border: #3e2723;
+ --shadow: #000;
+ }
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ background: var(--bg);
+ color: var(--text);
+ font-family: 'Courier New', Courier, monospace;
+ min-height: 100vh;
+ border-left: 12px solid var(--accent);
+ border-right: 12px solid var(--accent);
+ }
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 20px;
+ border: 4px solid var(--border);
+ box-shadow: 12px 12px 0 var(--shadow);
+ }
+ header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 20px 0;
+ border-bottom: 6px double var(--accent);
+ margin-bottom: 30px;
+ flex-wrap: wrap;
+ }
+ .logo {
+ font-size: 2.2rem;
+ font-weight: 900;
+ letter-spacing: -0.04em;
+ text-transform: uppercase;
+ background: var(--accent);
+ color: white;
+ padding: 0 12px;
+ border: 4px solid var(--border);
+ box-shadow: 6px 6px 0 var(--shadow);
+ }
+ .logo span {
+ display: inline-block;
+ transform: rotate(-2deg);
+ }
+ .hamburger-menu {
+ display: flex;
+ gap: 20px;
+ list-style: none;
+ font-weight: 700;
+ font-size: 1.1rem;
+ }
+ .hamburger-menu li a {
+ text-decoration: none;
+ color: var(--text);
+ padding: 8px 16px;
+ border: 3px solid var(--border);
+ background: white;
+ transition: 0.15s linear;
+ display: inline-block;
+ }
+ .hamburger-menu li a:hover {
+ background: var(--accent);
+ color: white;
+ transform: translate(-3px, -3px);
+ box-shadow: 6px 6px 0 var(--shadow);
+ }
+ .hamburger-menu li a.active {
+ background: var(--accent2);
+ color: white;
+ }
+ @media (max-width: 768px) {
+ header {
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 12px;
+ }
+ .hamburger-menu {
+ width: 100%;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ }
+ body {
+ border-left: 6px solid var(--accent);
+ border-right: 6px solid var(--accent);
+ }
+ .container {
+ padding: 12px;
+ box-shadow: 6px 6px 0 var(--shadow);
+ }
+ .logo {
+ font-size: 1.6rem;
+ }
+ }
+ h1 {
+ font-size: 2.8rem;
+ line-height: 1.1;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ border-left: 18px solid var(--accent);
+ padding-left: 20px;
+ margin: 30px 0 20px 0;
+ word-break: keep-all;
+ }
+ h2 {
+ font-size: 1.8rem;
+ margin: 40px 0 16px 0;
+ border-bottom: 4px dotted var(--accent);
+ padding-bottom: 6px;
+ display: inline-block;
+ }
+ h3 {
+ font-size: 1.3rem;
+ margin: 20px 0 10px 0;
+ font-weight: 800;
+ }
+ p {
+ margin-bottom: 1em;
+ font-size: 1.05rem;
+ line-height: 1.7;
+ max-width: 75ch;
+ }
+ .info-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px;
+ margin: 30px 0;
+ }
+ .info-card {
+ border: 4px solid var(--border);
+ background: white;
+ padding: 24px;
+ box-shadow: 8px 8px 0 var(--shadow);
+ transition: 0.1s linear;
+ }
+ .info-card:hover {
+ transform: translate(-2px, -2px);
+ box-shadow: 12px 12px 0 var(--shadow);
+ }
+ .info-card h3 {
+ background: var(--accent);
+ color: white;
+ display: inline-block;
+ padding: 4px 12px;
+ margin-top: -10px;
+ margin-bottom: 16px;
+ border: 2px solid var(--border);
+ }
+ .info-card ul {
+ list-style: none;
+ padding: 0;
+ }
+ .info-card ul li {
+ padding: 8px 0;
+ border-bottom: 2px dashed #ccc;
+ display: flex;
+ gap: 8px;
+ }
+ .info-card ul li::before {
+ content: '▸';
+ color: var(--accent);
+ font-weight: bold;
+ }
+ .cta-box {
+ background: var(--accent2);
+ color: white;
+ padding: 24px;
+ border: 4px solid var(--border);
+ margin: 30px 0;
+ text-align: center;
+ box-shadow: 10px 10px 0 var(--shadow);
+ }
+ .cta-box a {
+ color: white;
+ font-size: 1.6rem;
+ font-weight: 900;
+ text-decoration: none;
+ border: 3px solid white;
+ padding: 12px 30px;
+ display: inline-block;
+ margin-top: 12px;
+ transition: 0.15s;
+ }
+ .cta-box a:hover {
+ background: white;
+ color: var(--accent2);
+ }
+ .faq-item {
+ border-left: 8px solid var(--accent);
+ padding-left: 20px;
+ margin: 20px 0;
+ }
+ .faq-item strong {
+ display: block;
+ font-size: 1.2rem;
+ margin-bottom: 6px;
+ }
+ footer {
+ margin-top: 50px;
+ padding: 20px 0;
+ border-top: 6px double var(--border);
+ text-align: center;
+ font-size: 0.9rem;
+ }
+ .badge {
+ display: inline-block;
+ background: var(--accent);
+ color: white;
+ padding: 4px 12px;
+ font-size: 0.8rem;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ border: 2px solid var(--border);
+ }
+ @media (max-width: 768px) {
+ .info-grid {
+ grid-template-columns: 1fr;
+ }
+ h1 {
+ font-size: 1.8rem;
+ border-left-width: 12px;
+ padding-left: 14px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b06-bh-kb-real-1">
+  <meta property="og:description" content="t3b06-bh-kb-real-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://banghwa-room-guide.mapo-room-guide.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="logo"><span>🔥 방화노래방</span></div>
+ <nav>
+ <ul class="hamburger-menu">
+ <li><a href="/">홈</a></li>
+ <li><a href="/info" class="active">정보</a></li>
+ <li><a href="/review">리뷰</a></li>
+ <li><a href="/contact">문의</a></li>
+ </ul>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0331.html">방화 노래방 내돈내산 분석으로 보는 공덕 셔츠룸 추천정보</a>
+        <p class="post-item__summary">공덕 지역에서 새로운 형태의 유흥 문화를 경험하려면 인원 구성, 접근성, 그리고 서비스의 투명성이라는 세 가지 조건을 충족해야 합니다. 방화 노래방 내돈내산 후기들을 보면 결국 만족도는 함께 간 인</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0332.html">방화 노래방 내돈내산 데이터를 통한 연남 유흥 추천정보</a>
+        <p class="post-item__summary">연남동의 밤은 깊어갈수록 더욱 화려해지는데, 여러분은 어떤 기준으로 업체를 선택하고 계십니까? 방화 노래방 내돈내산 경험담을 종합해 보면, 사람마다 업체를 고르는 기준이 천차만별이라는 점이 흥미롭습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0333.html">방화 노래방 내돈내산 경험으로 본 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">방화 노래방 내돈내산 경험을 토대로 마곡 지역의 유흥 시설을 찾는 이들에게 도움이 될 만한 가이드를 정리한다. 무작정 방문하기보다는 실제 이용자의 후기를 검증하는 체계적인 단계가 필요하다. 먼저 온</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0334.html">방화 노래방 내돈내산 비교로 알아보는 마곡 유흥 추천정보</a>
+        <p class="post-item__summary">방화 노래방 내돈내산 후기를 비교해 보면 결국 가격과 서비스 사이의 접점을 찾는 것이 가장 중요하다. 마곡 일대에서 유흥을 즐길 때 소비자는 주로 실속형과 프리미엄형이라는 두 가지 선택지에 직면한다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0335.html">방화 노래방 내돈내산 경험담 속 합정 노래방 추천정보</a>
+        <p class="post-item__summary">방화 노래방 내돈내산 사례들을 살펴보면 많은 이들이 사전 예약 단계에서 예상치 못한 불편을 겪는다. 합정 지역에서 쾌적한 시간을 보내기 위해서는 방문 전 흔히 저지르는 실패 지점을 미리 인지해야 한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0336.html">방화 노래방 내돈내산 리스트로 보는 연남 클럽 추천정보</a>
+        <p class="post-item__summary">방화 노래방 내돈내산 방문 경험을 통해 얻은 데이터는 다른 유흥 공간을 선택할 때도 큰 도움이 된다. 연남동 지역의 클럽을 방문할 때는 시설의 수준만큼이나 접근성과 위치 파악이 핵심이다. 방문객이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0337.html">방화 노래방 내돈내산 경험으로 확인한 합정 셔츠룸 추천정보</a>
+        <p class="post-item__summary">오랜 친구와 방화 노래방 내돈내산 방문 이후, 보다 특별한 분위기를 찾다가 합정 지역으로 발걸음을 옮기는 경우가 많습니다. 처음 합정 일대에서 셔츠룸을 방문하려는 분들은 무엇부터 알아봐야 할지 막막</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0338.html">방화 노래방 내돈내산 경험담으로 확인한 공덕 가라오케 추천정보</a>
+        <p class="post-item__summary">방화 노래방 내돈내산 후기를 살펴보다 보면 가라오케는 항상 비슷할 것이라는 오해를 발견합니다. 하지만 공덕 가라오케 업계는 각자의 차별화된 시스템을 갖추고 있어 획일적인 시선으로 보면 곤란합니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0339.html">방화 노래방 내돈내산 이용자가 찾는 상수 마사지 추천정보</a>
+        <p class="post-item__summary">청결한 환경과 전문적인 관리사의 숙련도, 그리고 합리적인 가격대는 마사지 샵을 선택하는 3대 필수 조건입니다. 방화 노래방 내돈내산 이후 피로를 풀기 위해 상수 마사지를 알아보는 분들이 점차 늘어나</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0340.html">방화 노래방 내돈내산 노하우로 본 망원 노래방 추천정보</a>
+        <p class="post-item__summary">여러분은 평소 노래방을 고를 때 무엇을 가장 중요하게 생각하시나요? 방화 노래방 내돈내산 경험을 통해 우리가 얻은 교훈은 시설의 청결함과 가격의 명확성이 곧 서비스의 질로 연결된다는 점입니다. 망원</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0341.html">방화 노래방 내돈내산으로 검증하는 홍대 노래방 추천정보의 기준</a>
+        <p class="post-item__summary">최근 온라인상에 범람하는 방화 노래방 내돈내산 게시물들 사이에서 진실한 정보를 가려내는 안목이 필요합니다. 광고성 글이 섞여 있는 경우가 많기에 단순히 글의 양만 보고 판단해서는 안 됩니다. 객관적</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-oqhs4b.html">방화 노래방의 최적화된 마이크 음향 설정법</a>
+        <p class="post-item__summary">노래방이라는 공간이 단순히 고함을 지르는 곳이라 생각하시면 큰 오해입니다. 방화에 위치한 이 공간들은 기기마다 특유의 소리 결이 있어서, 조금만 만져주면 완전히 다른 경험을 할 수 있거든요. 저처럼</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">방화 노래방 내돈내산 가이드</a>
+        <p class="post-item__summary">방화 노래방 내돈내산 정보를 찾는 분들은 주로 합리적인 비용으로 쾌적한 노래방 환경을 원하는 경우가 많습니다. 지역 내 다양한 노래방은 각각 다른 분위기와 시설을 보유하고 있어, 방문 전에 미리 정</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">방화 노래방 내돈내산</a>
+        <p class="post-item__summary">방화 지역의 노래방은 다양한 테마와 공간 구성으로 이용객의 취향에 맞게 나눠져 있습니다. 내돈내산 정보는 직접 방문하여 경험한 이용자들의 솔직한 후기를 바탕으로 정리되며, 특정 업소를 추려 소개하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">방화 노래방 내돈내산 이용 가이드</a>
+        <p class="post-item__summary">방화 지역의 노래방은 다양한 이용 목적에 맞게 운영됩니다. 내돈내산 방식은 별도의 추가 요금이나 불필요한 부대 비용을 절감할 수 있는 효율적인 소비 방법으로 주목받고 있습니다. 방문 전에는 해당 업</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">방화 노래방 내돈내산 검색 및 가이드</a>
+        <p class="post-item__summary">노래방을 직접 찾아다니며 정보를 수집하는 과정은 시간이 많이 소요될 수 있습니다. 많은 이용자께서는 자신의 발로 직접 방문하여 공간을 확인하고, 주변 환경 및 시설 상태를 직접 눈으로 살펴보며 신뢰</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">방화 노래방 내돈내산 가이드</a>
+        <p class="post-item__summary">방화 지역에서 노래방을 찾을 때 고려해야 할 조건은 다양합니다. 주변 교통편 접근성, 실내 음향 설비의 기본 품질, 그리고 예약 시스템의 편의성 등이 주요 검토 사항에 포함됩니다. 이러한 요소들은 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-001-16vx9uy.html">방화 노래방 내돈내산 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">방화 지역에서 노래방을 방문하려는 분들이 가장 궁금해하는 것은 이용 요금 산정 방식입니다. 보통 시간 단위로 요금을 계산하며, 추가 시간 서비스 제공 여부는 업소별 운영 방침에 따라 다릅니다. 방문</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
